@@ -1,18 +1,18 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import Title from '../components/Title';
 
-const HooksUseLayoutEffect = ({title}) => {
+const HooksUseLayoutEffect = ({ title }) => {
     const [data, setData] = useState(0);
 
-    useEffect(()=>{
+    useEffect(() => {
         console.log('use Effect');
     })
-    useLayoutEffect(()=>{
+    useLayoutEffect(() => {
         console.log('use Layout Effect');
-    },[])
-    useEffect(()=>{
+    }, [])
+    useEffect(() => {
         console.log(data);
-    },[data])
+    }, [data])
     return (
         <>
             <Title title={title} />

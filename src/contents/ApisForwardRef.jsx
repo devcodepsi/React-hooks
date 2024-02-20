@@ -1,12 +1,12 @@
 import React, { forwardRef, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Title from '../components/Title';
 
-const ApisForwardRef = ({title}) => {
+const ApisForwardRef = ({ title }) => {
     const ref = useRef(null);
     const [height, setHeight] = useState();
-    useLayoutEffect(()=>{
+    useLayoutEffect(() => {
         setHeight(ref.current.clientHeight);
-    },[ref.current])
+    }, [ref.current])
     return (
         <>
             <Title title={title} />
@@ -20,6 +20,6 @@ export default ApisForwardRef;
 
 const Block = forwardRef((props, ref) => {
     return (
-        <div ref={ref} {...props} className={`border p-8 font-semibold ${props.bg}`}>container {props.height}</div> 
+        <div ref={ref} {...props} className={`border p-8 font-semibold ${props.bg}`}>container {props.height}</div>
     )
 });

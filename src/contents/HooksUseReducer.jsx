@@ -1,7 +1,7 @@
 import React from 'react';
 import Title from '../components/Title';
 
-const HooksUseReducer = ({title}) => {
+const HooksUseReducer = ({ title }) => {
     const initalState = { count: 0 };
     const [state, dispatch] = React.useReducer(reducerCount, initalState)
     return (
@@ -13,7 +13,7 @@ const HooksUseReducer = ({title}) => {
                     <button onClick={() => dispatch({ type: 'increment', payload: 3 })} className='border px-3'>increment</button>
                     <button onClick={() => dispatch({ type: 'decrement', payload: 2 })} className='border px-3'>decrease</button>
                 </div>
-            </div> 
+            </div>
         </>
     );
 };
@@ -22,12 +22,12 @@ export default HooksUseReducer;
 
 
 function reducerCount(state, action) {
-  switch (action.type) {
-    case 'increment':
-      return { count: state.count + action.payload };
-    case 'decrement':
-      return { count: state.count - action.payload };
-    default:
-      throw new Error();
-  }
+    switch (action.type) {
+        case 'increment':
+            return { count: state.count + action.payload };
+        case 'decrement':
+            return { count: state.count - action.payload };
+        default:
+            throw new Error();
+    }
 }
